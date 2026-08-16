@@ -1,0 +1,722 @@
+{
+  "narrative_summary": {
+    "period.start": {
+      "value": "2024-12-27",
+      "provenance": "minimum receivedate among latest case versions"
+    },
+    "period.end": {
+      "value": "2025-12-26",
+      "provenance": "maximum receivedate among latest case versions"
+    },
+    "case.total": {
+      "value": 1024,
+      "provenance": "count distinct safetyreportid after selecting highest safetyreportversion"
+    },
+    "case.serious": {
+      "value": 1023,
+      "provenance": "latest case versions where serious == 'serious'"
+    },
+    "case.non_serious": {
+      "value": 1,
+      "provenance": "distinct cases minus serious cases"
+    },
+    "case.serious_pct": {
+      "value": 99.9,
+      "provenance": "100 * serious_cases / total_cases"
+    },
+    "age.65plus": {
+      "value": 674,
+      "provenance": "sum of 65-74 and 75+ age bands"
+    },
+    "age.65plus_pct_all": {
+      "value": 65.8,
+      "provenance": "age_65_plus_cases / all distinct cases"
+    },
+    "age.65plus_pct_known": {
+      "value": 71.9,
+      "provenance": "age_65_plus_cases / cases with usable age"
+    },
+    "age.band_definitions": {
+      "value": [
+        "<18",
+        "18-44",
+        "45-64",
+        "65-74",
+        "75+"
+      ],
+      "provenance": "configured deterministic age-band boundaries"
+    },
+    "sex.female": {
+      "value": 503,
+      "provenance": "latest cases grouped by patient_patientsex == 'female'"
+    },
+    "sex.male": {
+      "value": 493,
+      "provenance": "latest cases grouped by patient_patientsex == 'male'"
+    },
+    "sex.unknown": {
+      "value": 28,
+      "provenance": "latest cases grouped by patient_patientsex == 'unknown'"
+    },
+    "geo.top1": {
+      "value": {
+        "location": "eu",
+        "cases": 342,
+        "pct_cases": 33.4
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top2": {
+      "value": {
+        "location": "united kingdom",
+        "cases": 278,
+        "pct_cases": 27.1
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top3": {
+      "value": {
+        "location": "france",
+        "cases": 185,
+        "pct_cases": 18.1
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.mixed_granularity": {
+      "value": "occurcountry includes both country values and the aggregate value 'eu'",
+      "provenance": "observed category values in occurcountry"
+    },
+    "reaction.top1": {
+      "value": {
+        "reaction": "Acute kidney injury",
+        "cases": 80,
+        "pct_cases": 7.8
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top2": {
+      "value": {
+        "reaction": "Drug ineffective",
+        "cases": 54,
+        "pct_cases": 5.3
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top3": {
+      "value": {
+        "reaction": "Hypotension",
+        "cases": 46,
+        "pct_cases": 4.5
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top4": {
+      "value": {
+        "reaction": "Drug interaction",
+        "cases": 43,
+        "pct_cases": 4.2
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top5": {
+      "value": {
+        "reaction": "Dyspnoea",
+        "cases": 38,
+        "pct_cases": 3.7
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "outcome.case.recovered_resolved": {
+      "value": 494,
+      "provenance": "distinct latest cases containing at least one reaction outcome 'recovered/resolved'"
+    },
+    "outcome.case.unknown": {
+      "value": 329,
+      "provenance": "distinct latest cases containing at least one reaction outcome 'unknown'"
+    },
+    "outcome.case.fatal": {
+      "value": 68,
+      "provenance": "distinct latest cases containing at least one reaction outcome 'fatal'"
+    },
+    "trend.peak_month": {
+      "value": {
+        "month": "2025-07",
+        "cases": 109
+      },
+      "provenance": "argmax of monthly distinct-case counts"
+    },
+    "trend.lowest_full_month": {
+      "value": {
+        "month": "2025-08",
+        "cases": 64
+      },
+      "provenance": "minimum among full calendar months inside reporting interval"
+    },
+    "trend.boundary_note": {
+      "value": "2024-12 and 2025-12 are partial calendar months because the reporting period runs 2024-12-27 through 2025-12-26.",
+      "provenance": "reporting-period boundary check"
+    }
+  },
+  "summary_cases": {
+    "case.total": {
+      "value": 1024,
+      "provenance": "count distinct safetyreportid after selecting highest safetyreportversion"
+    },
+    "case.serious": {
+      "value": 1023,
+      "provenance": "latest case versions where serious == 'serious'"
+    },
+    "case.non_serious": {
+      "value": 1,
+      "provenance": "distinct cases minus serious cases"
+    },
+    "case.serious_pct": {
+      "value": 99.9,
+      "provenance": "100 * serious_cases / total_cases"
+    },
+    "age.lt18": {
+      "value": 16,
+      "provenance": "latest cases assigned to derived age band <18"
+    },
+    "age.18_44": {
+      "value": 44,
+      "provenance": "latest cases assigned to derived age band 18-44"
+    },
+    "age.45_64": {
+      "value": 204,
+      "provenance": "latest cases assigned to derived age band 45-64"
+    },
+    "age.65_74": {
+      "value": 266,
+      "provenance": "latest cases assigned to derived age band 65-74"
+    },
+    "age.75plus": {
+      "value": 408,
+      "provenance": "latest cases assigned to derived age band 75+"
+    },
+    "age.unknown": {
+      "value": 86,
+      "provenance": "latest cases assigned to derived age band Unknown"
+    },
+    "age.band_definitions": {
+      "value": [
+        "<18",
+        "18-44",
+        "45-64",
+        "65-74",
+        "75+"
+      ],
+      "provenance": "configured deterministic age-band boundaries"
+    },
+    "sex.female": {
+      "value": 503,
+      "provenance": "latest cases grouped by patient_patientsex == 'female'"
+    },
+    "sex.male": {
+      "value": 493,
+      "provenance": "latest cases grouped by patient_patientsex == 'male'"
+    },
+    "sex.unknown": {
+      "value": 28,
+      "provenance": "latest cases grouped by patient_patientsex == 'unknown'"
+    },
+    "geo.top1": {
+      "value": {
+        "location": "eu",
+        "cases": 342,
+        "pct_cases": 33.4
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top2": {
+      "value": {
+        "location": "united kingdom",
+        "cases": 278,
+        "pct_cases": 27.1
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top3": {
+      "value": {
+        "location": "france",
+        "cases": 185,
+        "pct_cases": 18.1
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top4": {
+      "value": {
+        "location": "canada",
+        "cases": 55,
+        "pct_cases": 5.4
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.top5": {
+      "value": {
+        "location": "italy",
+        "cases": 51,
+        "pct_cases": 5.0
+      },
+      "provenance": "latest cases grouped by occurcountry"
+    },
+    "geo.mixed_granularity": {
+      "value": "occurcountry includes both country values and the aggregate value 'eu'",
+      "provenance": "observed category values in occurcountry"
+    },
+    "source.rows": {
+      "value": 1068,
+      "provenance": "physical rows loaded from source workbook"
+    },
+    "source.followups_removed": {
+      "value": 44,
+      "provenance": "source rows minus distinct latest case versions"
+    }
+  },
+  "reaction_analysis": {
+    "case.non_serious": {
+      "value": 1,
+      "provenance": "distinct cases minus serious cases"
+    },
+    "reaction.top1": {
+      "value": {
+        "reaction": "Acute kidney injury",
+        "cases": 80,
+        "pct_cases": 7.8
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top2": {
+      "value": {
+        "reaction": "Drug ineffective",
+        "cases": 54,
+        "pct_cases": 5.3
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top3": {
+      "value": {
+        "reaction": "Hypotension",
+        "cases": 46,
+        "pct_cases": 4.5
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top4": {
+      "value": {
+        "reaction": "Drug interaction",
+        "cases": 43,
+        "pct_cases": 4.2
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top5": {
+      "value": {
+        "reaction": "Dyspnoea",
+        "cases": 38,
+        "pct_cases": 3.7
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top6": {
+      "value": {
+        "reaction": "Bradycardia",
+        "cases": 37,
+        "pct_cases": 3.6
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top7": {
+      "value": {
+        "reaction": "Dizziness",
+        "cases": 36,
+        "pct_cases": 3.5
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top8": {
+      "value": {
+        "reaction": "Fatigue",
+        "cases": 33,
+        "pct_cases": 3.2
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top9": {
+      "value": {
+        "reaction": "Off label use",
+        "cases": 31,
+        "pct_cases": 3.0
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top10": {
+      "value": {
+        "reaction": "Fall",
+        "cases": 30,
+        "pct_cases": 2.9
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top11": {
+      "value": {
+        "reaction": "Diarrhoea",
+        "cases": 30,
+        "pct_cases": 2.9
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top12": {
+      "value": {
+        "reaction": "Condition aggravated",
+        "cases": 27,
+        "pct_cases": 2.6
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top13": {
+      "value": {
+        "reaction": "Hypokalaemia",
+        "cases": 27,
+        "pct_cases": 2.6
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top14": {
+      "value": {
+        "reaction": "Medication error",
+        "cases": 25,
+        "pct_cases": 2.4
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.top15": {
+      "value": {
+        "reaction": "Asthenia",
+        "cases": 25,
+        "pct_cases": 2.4
+      },
+      "provenance": "distinct latest cases containing MedDRA PT after aligned reaction parsing"
+    },
+    "reaction.serious_top1": {
+      "value": {
+        "reaction": "Acute kidney injury",
+        "serious_cases": 80,
+        "pct_serious_cases": 7.8
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top2": {
+      "value": {
+        "reaction": "Drug ineffective",
+        "serious_cases": 53,
+        "pct_serious_cases": 5.2
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top3": {
+      "value": {
+        "reaction": "Hypotension",
+        "serious_cases": 46,
+        "pct_serious_cases": 4.5
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top4": {
+      "value": {
+        "reaction": "Drug interaction",
+        "serious_cases": 43,
+        "pct_serious_cases": 4.2
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top5": {
+      "value": {
+        "reaction": "Dyspnoea",
+        "serious_cases": 38,
+        "pct_serious_cases": 3.7
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top6": {
+      "value": {
+        "reaction": "Bradycardia",
+        "serious_cases": 37,
+        "pct_serious_cases": 3.6
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top7": {
+      "value": {
+        "reaction": "Dizziness",
+        "serious_cases": 36,
+        "pct_serious_cases": 3.5
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top8": {
+      "value": {
+        "reaction": "Fatigue",
+        "serious_cases": 33,
+        "pct_serious_cases": 3.2
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top9": {
+      "value": {
+        "reaction": "Off label use",
+        "serious_cases": 31,
+        "pct_serious_cases": 3.0
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top10": {
+      "value": {
+        "reaction": "Fall",
+        "serious_cases": 30,
+        "pct_serious_cases": 2.9
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top11": {
+      "value": {
+        "reaction": "Diarrhoea",
+        "serious_cases": 30,
+        "pct_serious_cases": 2.9
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top12": {
+      "value": {
+        "reaction": "Condition aggravated",
+        "serious_cases": 27,
+        "pct_serious_cases": 2.6
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top13": {
+      "value": {
+        "reaction": "Hypokalaemia",
+        "serious_cases": 27,
+        "pct_serious_cases": 2.6
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top14": {
+      "value": {
+        "reaction": "Medication error",
+        "serious_cases": 25,
+        "pct_serious_cases": 2.4
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "reaction.serious_top15": {
+      "value": {
+        "reaction": "Asthenia",
+        "serious_cases": 25,
+        "pct_serious_cases": 2.4
+      },
+      "provenance": "serious latest cases containing MedDRA PT"
+    },
+    "outcome.multilabel_note": {
+      "value": "A case may contribute to multiple outcome categories when it contains multiple reactions.",
+      "provenance": "outcome field structure"
+    },
+    "outcome.event.recovered_resolved": {
+      "value": 1280,
+      "provenance": "count of reaction-level outcome value 'recovered/resolved' among latest case versions"
+    },
+    "outcome.event.unknown": {
+      "value": 1033,
+      "provenance": "count of reaction-level outcome value 'unknown' among latest case versions"
+    },
+    "outcome.event.not_recovered_not_resolved_ongoing": {
+      "value": 536,
+      "provenance": "count of reaction-level outcome value 'not recovered/not resolved/ongoing' among latest case versions"
+    },
+    "outcome.event.recovering_resolving": {
+      "value": 406,
+      "provenance": "count of reaction-level outcome value 'recovering/resolving' among latest case versions"
+    },
+    "outcome.event.fatal": {
+      "value": 134,
+      "provenance": "count of reaction-level outcome value 'fatal' among latest case versions"
+    },
+    "outcome.event.recovered_resolved_with_sequelae": {
+      "value": 34,
+      "provenance": "count of reaction-level outcome value 'recovered/resolved with sequelae' among latest case versions"
+    }
+  },
+  "serious_alerts": {
+    "case.serious": {
+      "value": 1023,
+      "provenance": "latest case versions where serious == 'serious'"
+    },
+    "case.non_serious": {
+      "value": 1,
+      "provenance": "distinct cases minus serious cases"
+    },
+    "expedite.yes": {
+      "value": 1023,
+      "provenance": "latest cases where fulfillexpeditecriteria == 'yes'",
+      "interpretation_constraint": "Do not equate automatically with verified 15-day Alert submission"
+    },
+    "expedite.no": {
+      "value": 1,
+      "provenance": "latest cases where fulfillexpeditecriteria != 'yes'"
+    },
+    "expedite.pct": {
+      "value": 99.9,
+      "provenance": "expedite yes / all distinct cases"
+    },
+    "expedite.limitations": {
+      "value": [
+        "No explicit expectedness/listedness field is supplied.",
+        "No explicit 15-day submission date is supplied.",
+        "fulfillexpeditecriteria is treated as an expedite-criteria flag, not proof of a verified 15-day Alert submission."
+      ],
+      "provenance": "field-availability audit"
+    },
+    "seriousness.death": {
+      "value": 68,
+      "provenance": "latest cases where corresponding seriousness flag for death == 'yes'"
+    },
+    "seriousness.life_threatening": {
+      "value": 105,
+      "provenance": "latest cases where corresponding seriousness flag for life_threatening == 'yes'"
+    },
+    "seriousness.hospitalization": {
+      "value": 482,
+      "provenance": "latest cases where corresponding seriousness flag for hospitalization == 'yes'"
+    },
+    "seriousness.disabling": {
+      "value": 44,
+      "provenance": "latest cases where corresponding seriousness flag for disabling == 'yes'"
+    },
+    "seriousness.congenital_anomaly": {
+      "value": 7,
+      "provenance": "latest cases where corresponding seriousness flag for congenital_anomaly == 'yes'"
+    },
+    "seriousness.other_medically_important": {
+      "value": 905,
+      "provenance": "latest cases where corresponding seriousness flag for other_medically_important == 'yes'"
+    }
+  },
+  "trends": {
+    "trend.monthly_cases": {
+      "value": {
+        "2024-12": 21,
+        "2025-01": 75,
+        "2025-02": 94,
+        "2025-03": 83,
+        "2025-04": 78,
+        "2025-05": 80,
+        "2025-06": 84,
+        "2025-07": 109,
+        "2025-08": 64,
+        "2025-09": 76,
+        "2025-10": 102,
+        "2025-11": 75,
+        "2025-12": 83
+      },
+      "provenance": "distinct latest cases grouped by receivedate calendar month"
+    },
+    "trend.peak_month": {
+      "value": {
+        "month": "2025-07",
+        "cases": 109
+      },
+      "provenance": "argmax of monthly distinct-case counts"
+    },
+    "trend.lowest_full_month": {
+      "value": {
+        "month": "2025-08",
+        "cases": 64
+      },
+      "provenance": "minimum among full calendar months inside reporting interval"
+    },
+    "trend.reaction_peaks": {
+      "value": [
+        {
+          "reaction": "Acute kidney injury",
+          "peak_cases": 9,
+          "peak_months": [
+            "2025-01",
+            "2025-03",
+            "2025-08"
+          ]
+        },
+        {
+          "reaction": "Drug ineffective",
+          "peak_cases": 10,
+          "peak_months": [
+            "2025-08"
+          ]
+        },
+        {
+          "reaction": "Hypotension",
+          "peak_cases": 8,
+          "peak_months": [
+            "2025-08"
+          ]
+        },
+        {
+          "reaction": "Drug interaction",
+          "peak_cases": 6,
+          "peak_months": [
+            "2025-03"
+          ]
+        },
+        {
+          "reaction": "Dyspnoea",
+          "peak_cases": 6,
+          "peak_months": [
+            "2025-08"
+          ]
+        }
+      ],
+      "provenance": "monthly counts for the five most common reactions"
+    },
+    "trend.boundary_note": {
+      "value": "2024-12 and 2025-12 are partial calendar months because the reporting period runs 2024-12-27 through 2025-12-26.",
+      "provenance": "reporting-period boundary check"
+    },
+    "age.65plus": {
+      "value": 674,
+      "provenance": "sum of 65-74 and 75+ age bands"
+    },
+    "age.65plus_pct_all": {
+      "value": 65.8,
+      "provenance": "age_65_plus_cases / all distinct cases"
+    },
+    "age.65plus_pct_known": {
+      "value": 71.9,
+      "provenance": "age_65_plus_cases / cases with usable age"
+    },
+    "age.band_definitions": {
+      "value": [
+        "<18",
+        "18-44",
+        "45-64",
+        "65-74",
+        "75+"
+      ],
+      "provenance": "configured deterministic age-band boundaries"
+    },
+    "geo.mixed_granularity": {
+      "value": "occurcountry includes both country values and the aggregate value 'eu'",
+      "provenance": "observed category values in occurcountry"
+    }
+  },
+  "history_actions": {
+    "actions.supplied": {
+      "value": false,
+      "provenance": "challenge input inventory"
+    },
+    "actions.statement": {
+      "value": "No structured safety-action history or supporting action document was supplied with the challenge dataset. This does not establish that no actions occurred.",
+      "provenance": "challenge input inventory",
+      "interpretation_constraint": "Absence of supplied action information is not evidence that no action occurred"
+    }
+  }
+}

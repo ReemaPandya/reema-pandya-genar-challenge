@@ -1,0 +1,39 @@
+{
+  "narrative_summary": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 1
+  },
+  "summary_cases": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 1
+  },
+  "reaction_analysis": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 1
+  },
+  "serious_alerts": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 1
+  },
+  "trends": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 1
+  },
+  "history_actions": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": [],
+    "attempts_used": 3,
+    "fallback_used": true
+  }
+}

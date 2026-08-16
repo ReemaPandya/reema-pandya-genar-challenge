@@ -1,0 +1,32 @@
+[
+  {
+    "section": "narrative_summary",
+    "status": "approved",
+    "note": ""
+  },
+  {
+    "section": "summary_cases",
+    "status": "approved",
+    "note": ""
+  },
+  {
+    "section": "reaction_analysis",
+    "status": "flagged",
+    "note": "Section is truncated at the beginning and starts mid-sentence. Please regenerate the complete reaction analysis with all evidence markers intact."
+  },
+  {
+    "section": "serious_alerts",
+    "status": "flagged",
+    "note": "Section is still truncated at the beginning and starts mid-evidence marker. Please regenerate the complete section with the full opening sentence and intact [[E:key]] citations."
+  },
+  {
+    "section": "trends",
+    "status": "approved",
+    "note": ""
+  },
+  {
+    "section": "history_actions",
+    "status": "approved",
+    "note": ""
+  }
+]

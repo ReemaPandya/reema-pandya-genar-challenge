@@ -1,0 +1,8 @@
+{
+  "narrative_summary": "This summary covers cases received between ... [[E:period.start]][[E:period.end]] ...",
+  "summary_cases": "A total of 1024 cases were identified. [[E:case.total]] ...",
+  "reaction_analysis": "The most frequently reported reactions included ... [[E:reaction.top1]] ...",
+  "serious_alerts": "Among serious cases ... [[E:seriousness.life_threatening]] ...",
+  "trends": "The reporting period includes partial calendar months ... [[E:trend.boundary_note]] ...",
+  "history_actions": "No structured safety-action history or supporting action document was supplied ... [[E:actions.statement]]"
+}

@@ -1,0 +1,9 @@
+{
+  "report_type": "PADER-style periodic safety report",
+  "product": "Bisoprolol",
+  "application_identifier": "B-1",
+  "source_reference": "Supplied GenAR challenge materials",
+  "top_reactions": 15,
+  "top_countries": 12,
+  "age_bands": ["<18", "18-44", "45-64", "65-74", "75+", "Unknown"]
+}

@@ -1,0 +1,32 @@
+{
+  "narrative_summary": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  },
+  "summary_cases": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  },
+  "reaction_analysis": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  },
+  "serious_alerts": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  },
+  "trends": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  },
+  "history_actions": {
+    "marker_errors": [],
+    "numeric_errors": [],
+    "prohibited_claim_errors": []
+  }
+}

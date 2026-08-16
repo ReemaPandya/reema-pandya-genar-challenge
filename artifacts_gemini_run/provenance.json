@@ -1,0 +1,19 @@
+{
+  "candidate_name": "Reema Pandya",
+  "dataset_source_file": "Bisoprolol_icsr_sample_1068rows.xlsx",
+  "dataset_source_sha256": "9cf61cec85147217d066b0974b58ad3584b38f1cc49a19a8e67e5c214bcd32c1",
+  "source_rows": 1068,
+  "unique_cases": 1024,
+  "checked_in_report_provider": "grounded-template baseline",
+  "checked_in_report_model": "none",
+  "runtime_ai_provider": "Gemini Developer API via google-genai",
+  "runtime_default_model": "gemini-3.5-flash",
+  "prompt_files": [
+    "prompts/system.txt",
+    "prompts/section_rules.json"
+  ],
+  "checked_in_review_mode": "auto baseline verification",
+  "final_emitted": true,
+  "checked_in_report_input": "artifacts/section_packets.json",
+  "note": "The checked-in report is a credential-free deterministic baseline. Run the Gemini command in README.md with --publish to replace it with a Gemini-drafted, validated, human-approved report before submission."
+}
